@@ -101,6 +101,17 @@ class Sdk41q {
 
   }
 
+  static function request_api_details($email, $whitelist, $requester = '') {
+    $config = new stdClass;
+    $config->email     = $email;
+    $config->whitelist = $whitelist;
+    $config->requester = $requester;
+
+    self::$lang = 'en';
+
+    return self::request('request-api-details', $config);
+  }
+
 
   static function render_error_html($result) {
     return $result;
